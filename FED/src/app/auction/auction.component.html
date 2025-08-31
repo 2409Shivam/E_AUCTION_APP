@@ -1,0 +1,30 @@
+<div class="container mt-5" *ngIf="currentPlayer">
+  <div class="card shadow-lg p-4 text-center">
+    <!-- Role Prompt -->
+    <div *ngIf="getRolePrompt()" class="alert alert-warning fw-bold mb-3">
+      {{ getRolePrompt() }}
+    </div>
+
+    <!-- Player Image -->
+    <img 
+      [src]="currentPlayer.profilePic" 
+      alt="{{ currentPlayer.name }}" 
+      class="img-fluid rounded-circle mb-3"
+      style="max-width: 200px; height: 200px; object-fit: cover;"
+    />
+
+    <!-- Player Details -->
+    <h4 class="fw-bold">{{ currentPlayer.name }}</h4>
+    <p class="text-muted">{{ currentPlayer.role }}</p>
+
+    <!-- Navigation Buttons -->
+    <div class="d-flex justify-content-between mt-4">
+      <button class="btn btn-secondary" (click)="prevPlayer()" [disabled]="currentIndex === 0">
+        ⬅️ Previous
+      </button>
+      <button class="btn btn-primary" (click)="nextPlayer()" [disabled]="currentIndex === players.length - 1">
+        Next ➡️
+      </button>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Auctioner": {
+    "FED": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/auctioner",
+            "outputPath": "dist/fed",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Auctioner:build:production"
+              "buildTarget": "FED:build:production"
             },
             "development": {
-              "buildTarget": "Auctioner:build:development"
+              "buildTarget": "FED:build:development"
             }
           },
           "defaultConfiguration": "development"

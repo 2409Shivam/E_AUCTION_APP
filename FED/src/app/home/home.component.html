@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 rounded-3">
+    <h3 class="text-center mb-4">Cricket Auction - Upload Player Excel</h3>
+
+    <!-- File Upload -->
+    <div class="mb-3">
+      <label for="fileInput" class="form-label fw-bold">Choose Excel File</label>
+      <input
+        type="file"
+        id="fileInput"
+        (change)="onFileSelected($event)"
+        class="form-control"
+        accept=".xlsx,.xls,.csv"
+      />
+    </div>
+
+    <!-- Uploaded File Info -->
+    <div *ngIf="fileName" class="alert alert-info mt-3">
+      <strong>Selected File:</strong> {{ fileName }}
+    </div>
+
+    <!-- Upload Button -->
+    <div class="text-center">
+      <button
+        class="btn btn-primary px-4"
+        [disabled]="!selectedFile"
+        (click)="onUpload()"
+      >
+        Upload & Continue
+      </button>
+    </div>
+  </div>
+</div>
